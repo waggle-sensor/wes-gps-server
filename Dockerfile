@@ -1,7 +1,9 @@
 # Restrict to alpine:3.8 to be sure we get the gpsd 3.17 version which is compatible with client tools
 FROM alpine:3.8
 
-RUN apk add --no-cache 'gpsd=3.17-r2'
+RUN apk add --no-cache \
+    'gpsd=3.17-r2' \
+    'gpsd-clients=3.17-r2'
 
 # capture output of gpsd to logging via syslogd
 ARG GPS_DEVICE
